@@ -17,11 +17,7 @@ rl.on('line', (line) => {
 });
 
 function palindromeCheck (value) {
-  let splitString = value.split("");
-  let reverseString = splitString.reverse();
-  let joinString = reverseString.join("");
-
-  if (joinString === value) {
+  if (value === value.split("").reverse().join("")) {
     return "This is a palindrome"
   } else {
     return "This is not a palindrome"
