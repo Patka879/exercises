@@ -16,10 +16,15 @@ rl.on('line', (line) => {
   }
 });
 
+
+
 function palindromeCheck (value) {
-  if (value === value.split("").reverse().join("")) {
+  const lowerCaseValue = value.replace(/[\W_]+/g,"").toLowerCase()
+  if (lowerCaseValue === lowerCaseValue.split("").reverse().join("")) {
     return "This is a palindrome"
   } else {
     return "This is not a palindrome"
   }
 }
+
+module.exports = {palindromeCheck}
