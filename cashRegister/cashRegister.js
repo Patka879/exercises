@@ -1,18 +1,17 @@
 "use strict"
 
     function checkCashRegister (price, cash, CID) {
-        let changeDue = cash - price;
+        let changeDue = (cash * 100) - (price * 100);
 
         function sumCID () {
             let sum = 0;
-            CID.map(denomination => sum += denomination[1])
+            CID.map(denomination => sum += denomination[1] * 100)
             return sum;
         }
 
-
         if(sumCID() < changeDue) {
             return {status: "INSUFFICIENT_FUNDS", change: []}
-        } else if(sumCID === changeDue) {
+        } else if(sumCID() === changeDue) {
             return {status: "CLOSED", change: CID}; 
         } else {
             
@@ -30,16 +29,25 @@
             let changeDueInDenominations = []
 
             denominations.map(function(denominationItem) {
-                if(changeDue >= denominationItem[1]) {
-                    let changeInDenomination = Math.trunc(changeDue/denominationItem[1]) * denominationItem[1]
+                const denominationValueInInteger = denominationItem[1] * 100
+                if(changeDue >= denominationValueInInteger) {
+                    let changeInDenomination = Math.trunc(changeDue/denominationValueInInteger) * denominationValueInInteger
+                    const matchedDenominationInDrawer = CID.find(function(CIDDenominationItem) {
+                        return CIDDenominationItem[0] === denominationItem[0]
+                    }) 
+                    
+                    if(changeInDenomination > matchedDenominationInDrawer[1] * 100) {
+                        changeInDenomination = matchedDenominationInDrawer[1] * 100 
+                    }
                     changeDueInDenominations.push([denominationItem[0], changeInDenomination])
                     changeDue -= changeInDenomination
                 } 
             })
-            return {status: "OPEN", change: changeDueInDenominations};
-        
+            if (changeDue > 0) return {status: "INSUFFICIENT_FUNDS", change: []}
+            return {status: "OPEN", change: changeDueInDenominations.map(denominationItem => [denominationItem[0], denominationItem[1] / 100])};
         }
     }
+
 
 
     module.exports = {checkCashRegister}
