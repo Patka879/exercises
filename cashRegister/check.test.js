@@ -1,7 +1,7 @@
 "use strict"
 
-const {expect} = require("jest/globals")
-const {cash_register} = require ("./cash/register")
+const {expect} = require("@jest/globals")
+const {checkCashRegister} = require("./cashRegister")
 
 
 test("is there enough cash in the drawer", function() {
