@@ -14,5 +14,6 @@ function titleCase(str) {
     return splitedSentence.join(" ")
 }
 
+// comment 
 
 module.exports = {titleCase}
