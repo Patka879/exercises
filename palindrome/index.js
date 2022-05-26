@@ -9,6 +9,7 @@ function handleChange(e) {
 
 
 function palindromeCheck (value) {
+    value = value.toLowerCase()
     if (value === value.split("").reverse().join("")) {
       return "Yes! It's a palindrome"
     } else {
