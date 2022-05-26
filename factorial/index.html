@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div id="container">
+            <label for="number">Enter number to receive a factorial</label>
+            <input type="number" placeholder="Enter Your number..." id="number" min="0" pattern="\d*" onkeyup="handleChange(event)" onchange="handleChange(event)">
+            <div id="result">
+                <h3>Factorial:</h3>
+                <h2 id="factorial"></h2>
+            </div>
+            <script src="index.js"></script>
+        </div>
+    </body>
+</html>
