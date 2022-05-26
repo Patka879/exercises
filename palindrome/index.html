@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div id="container">
+            <label for="input">Enter Your sentence to check if it's a palindrome:</label>
+            <input type="text" placeholder="Your sentence..." id="input" oninput="handleChange(event)">
+            <button onclick="handleClick()">Check</button>
+            <div id="result">
+                <h3>Is this sentence a palindrome?</h3>
+                <h2 id="yesorno"></h2>
+            </div>
+            <script src="index.js"></script>
+        </div>
+    </body>
+</html>
