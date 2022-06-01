@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 body {
-    background: linear-gradient( rgb(136, 136, 154) 0%, rgb(63, 68, 77)  100%);
+    background: linear-gradient( rgb(205, 205, 215) 0%, rgb(97, 103, 113)  100%);
     text-align: center;
     height: 100vh;
     padding: 20px;
@@ -65,7 +65,7 @@ input {
 
 .conversion-section {
     padding: 2%;
-    height: 67%;
+    height: 65%;
     color:aliceblue; 
     background-color: #1F2937;
     border-radius: 10px;
