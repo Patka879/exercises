@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+body {
+    background: linear-gradient( rgb(136, 136, 154) 0%, rgb(63, 68, 77)  100%);
+    text-align: center;
+    height: 100vh;
+    padding: 20px;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    padding: 12px;
+}
+
+h3 {
+    margin: 0;
+    padding: 20px 0 5px 0;
+    font-size: 0.9rem;
+    font-weight: 500
+}
+
+p {
+    font-size: 0.8rem;
+    color:rgb(166, 170, 174);
+}
+
+.container {
+    position: relative;
+        left: 33%;
+        top: 20%;
+    width: 30%;
+    height: 60%;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 0.5%;
+}
+
+.input-section {
+    background-image: linear-gradient( 215deg,
+        hsl(32deg 90% 52%) 0%,
+        hsl(15deg 99% 62%) 39%,
+        hsl(356deg 97% 66%) 61%,
+        hsl(340deg 82% 61%) 100%); 
+    height: 30%;
+    border-radius: 10px;
+    margin-bottom: 1%;
+}
+
+.input-section * {
+    color:aliceblue; 
+}
+
+:focus{outline: none;}
+
+input {
+    border: 0;
+    background-color: transparent;
+    text-align: center;
+    font-size: 2rem;
+    width: 80%;
+}
+
+.conversion-section {
+    padding: 2%;
+    height: 67%;
+    color:aliceblue; 
+    background-color: #1F2937;
+    border-radius: 10px;
+}
