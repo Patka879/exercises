@@ -98,13 +98,13 @@ function checkCashRegister () {
 }
 
 
-function handleClick() {
+function handleClick(event) {
     document.getElementById("table").innerHTML = ""
     checkCashRegister()
     event.preventDefault()
 }
 
-function handleReset() {
+function handleReset(event) {
 
     let price = document.getElementById("price")
     price.value = price.defaultValue
