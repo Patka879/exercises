@@ -8,20 +8,20 @@ function handleClick(event) {
     let sanitaziedPhoneNumber;
 
     if(/[^0-9()-\s]/g.test(input)) {
-        output.innerHTML = "The number contains special characters that should not be used (other than "-")"
+        output.innerHTML = "The number contains special characters that shouldn't be used"
     } else if(input.startsWith("-", "(", ")") || input.endsWith("-", "(", ")")) {
-        output.innerHTML = "This number starts or ends with characters that should not be used at the beginning/end of the number"
+        output.innerHTML = "Please don't use dashes at the beginning/end of the number"
     } else {
         sanitaziedPhoneNumber = input;
     }
 
-    console.log(input)
+    console.log("sanitized number,", sanitaziedPhoneNumber)
 
     let numberOfDashes = (sanitaziedPhoneNumber.match(/-/g) || '').length
 
 
     if(numberOfDashes >= 3 ) {
-        return false;    
+        output.innerHTML = "This format is not correct. Only 2 dashes can be used."    
     }
 
 const dashSpacesRemoved = sanitaziedPhoneNumber.replace(/[-" "]/g, "");
@@ -43,14 +43,15 @@ if(dashSpacesRemoved.charAt(0) == 1 && dashSpacesRemoved.length == 11) {
 
     }
 
-    event.preventDefault
+    event.preventDefault()
 }
 
-function handleReset() {
+function handleReset(event) {
     let input = document.getElementById("input")
     input.value = input.defaultValue
     let output = document.getElementById("output")
-    output.value = output.defaultValue
+    output.innerHTML = ""
+    event.preventDefault()
 }
 
 
