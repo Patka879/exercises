@@ -101,6 +101,7 @@ function checkCashRegister () {
 function handleClick() {
     document.getElementById("table").innerHTML = ""
     checkCashRegister()
+    event.preventDefault()
 }
 
 function handleReset() {
@@ -112,6 +113,7 @@ function handleReset() {
     cashToReturn.innerHTML = "Please enter the data."
     cashToReturn.style.color = '#333' 
     document.getElementById("table").innerHTML = ""  
+    event.preventDefault()
 }
 
 
