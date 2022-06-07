@@ -16,8 +16,7 @@ body {
     height: 100%;
     background-color: rgb(119, 119, 236);
     align-items: center; 
-    justify-content:space-evenly;
-    border-radius: 10px;
+    justify-content: space-evenly;
     padding: 15px 10px;
     box-shadow: 7px 10px 10px 10px rgba(0, 0, 0, 0.24);
 }
@@ -81,6 +80,7 @@ button:active {
         width: 600px;
         height: 400px;
         justify-content: space-around;
+        border-radius: 10px;
     }
     label {
         font-size: 36px;
