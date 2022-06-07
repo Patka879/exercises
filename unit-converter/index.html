@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="index.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Unit Converter</title>
-    </head>
-    <body>
-        <div class="container">
-            <section class="input-section">
-                <h1>Metric / Imperial Unit Conversion</h1>
-                <input type="number" value="1" min="0.001" pattern="\d*" onkeyup="handleChange(event)" onchange="handleChange(event)">
-            </section>
-            <section class="conversion-section">
-                <span>
-                    <h3>Length (Meter/Feet)</h3>
-                    <p id="length-conversion">1 meter = 3.280 feet | 1 feet = 0.305 meter</p>
-                </span>
-                <span>
-                    <h3>Volume (Liters/Gallons)</h3>
-                    <p id="volume-conversion">1 liter = 0.264 gallons | 1 gallon = 3.785 liters</p>
-                </span>
-                <span>
-                    <h3>Mass (Kilograms/Pounds)</h3>
-                    <p id="mass-conversion">1 kilogram = 2.205 pounds | 1 pound = 0.453 kilogram</p>
-                </span> 
-            </section>
-        </div>
-        <script src="index.js"></script>
-    </body>
-</html>
+    <html>
+        <head>
+            <link rel="stylesheet" href="index.css">
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Unit Converter</title>
+        </head>
+        <body>
+            <div class="container">
+                <section class="input-section">
+                    <h1>Metric / Imperial Unit Conversion</h1>
+                    <input type="number" value="1" min="0.001" pattern="\d*" onkeyup="handleChange(event)" onchange="handleChange(event)">
+                </section>
+                <section class="conversion-section">
+                    <span>
+                        <h3>Length (Meter/Feet)</h3>
+                        <p id="length-conversion">1 meter = 3.280 feet | 1 feet = 0.305 meter</p>
+                    </span>
+                    <span>
+                        <h3>Volume (Liters/Gallons)</h3>
+                        <p id="volume-conversion">1 liter = 0.264 gallons | 1 gallon = 3.785 liters</p>
+                    </span>
+                    <span>
+                        <h3>Mass (Kilograms/Pounds)</h3>
+                        <p id="mass-conversion">1 kilogram = 2.205 pounds | 1 pound = 0.453 kilogram</p>
+                    </span> 
+                </section>
+            </div>
+            <script src="index.js"></script>
+        </body>
+    </html>
