@@ -21,32 +21,32 @@ body {
 }
 
 .container {
-    height: 70%;
-    width: 50%;
-    margin: 120px 400px;
+    height: 90%;
+    width: 90%;
+    margin: 10% 5%;
     background-color: antiquewhite;
     border-radius: 40px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .left-side {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
-    margin-top: 70px;
+    width: 90%;
     cursor: pointer;
 }
 
 img {
-    width: 50%;
+    width: 30%;
     opacity: 0.9;
 }
 
 h1 {
-    margin: 30px 0;
+    margin: 20px 0 10px 0;
     font-size: 3rem;
     font-family: 'Pacifico', cursive;
     font-weight: 200;
@@ -56,20 +56,20 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 50%;
+    width: 90%;
     color: rgb(51, 49, 49);
     font-family: 'Quicksand', sans-serif;
 }
 
 h3 {
     word-wrap: break-word;
-    margin-bottom: 30px;
-    width: 80%;
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+    width: 100%;
 }
 
 label {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-bottom: 15px;
     text-align: left;
     font-weight: 800;
@@ -77,20 +77,20 @@ label {
 }
 
 input {
-    width: 60%;
-    height: 40px;
+    width: 95%;
+    height: 50px;
     border-radius: 15px;
     border-color: hsl(288deg 79% 36%);
     text-indent: 5px;
     margin-bottom: 30px;
 }
 
-.button{
+.button {
     position: relative;
     background-color: hsl(356deg 100% 61%);
     border-radius: 4em;
     border: 2px solid rgb(178, 40, 49);
-    width: 40%;
+    width: 60%;
     font-size: 18px;
     color: white;
     padding: 0.7em 1.8em;
@@ -135,4 +135,57 @@ input {
   
   .button:active {
     top: 1px;
+  }
+
+  .result {
+      height: 120px;
+      margin-bottom: 30px;
+  }
+
+  @media (min-width: 910px) {
+    .container {
+        height: 70%;
+        width: 50%;
+        margin: 120px 400px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: unset;
+    }
+    .left-side {
+        width: 50%;
+        margin-top: 70px;
+    }
+    img {
+        width: 50%;
+    }
+    h1 {
+        margin: 30px 0;
+        font-size: 3rem;
+    }
+    .right-side {
+        width: 50%;
+        justify-content: center;
+    }
+    h3 {
+        margin-bottom: 30px;
+        width: 80%
+    }
+    label {
+        font-size: 1rem;
+    }
+    input {
+        width: 60%;
+        height: 40px;
+    }
+    .button {
+        width: 40%;
+    }
+    .result {
+        margin: 0;
+        font-size: 1.2rem;
+        width: 80%;
+    }
+    .output {
+        margin: 0 20px;
+    }
   }

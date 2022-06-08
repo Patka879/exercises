@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="index.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="phone.css">
         <title>Phone Number Validator</title>
     </head>
     <body>
@@ -15,9 +17,11 @@
                 <label for="phone-number">Phone number:</label>
                 <input type="text" name="phone-number" id="input" placeholder="Enter phone number...">
                 <button class="button" onclick="handleClick(event)">Check</button>
-                <h3 id="output"></h3>
+                <div class="result">
+                    <h4 id="output">Please enter the phone number</h4>
+                </div>
             </div>
         </div>
     </body>
-    <script src="index.js"></script>
+    <script src="phone.js"></script>
 </html>
