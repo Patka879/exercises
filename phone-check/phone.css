@@ -18,6 +18,7 @@ body {
     hsl(10deg 100% 61%) 78%,
     hsl(21deg 100% 57%) 89%,
     #ff8800 100%);
+    overflow: hidden;
 }
 
 .container {
