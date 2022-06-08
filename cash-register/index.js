@@ -1,5 +1,10 @@
 "use strict"
 
+function camelCaseToHumanReadable(camelCaseString) {
+    var words = camelCaseString.match(/[A-Za-z][a-z]*/g) || [];
+    return words.join(" ");
+}
+
 let cashToReturn = document.getElementById("cash-to-return")
 
 const denominations = {
@@ -15,14 +20,20 @@ const denominations = {
 }
 
 const denominationsInDrawer = {}
-let counter = 0
 
-for(const denomination in denominations) {
-    const inputId = `input${denomination.charAt(0).toUpperCase()}${denomination.slice(1)}`
-    document.getElementById(inputId).defaultValue = counter;
-    denominationsInDrawer[denomination] = counter
-    counter++
+function setInitialDrawerValues() {
+    let counter = 0
+    for(const denomination in denominations) {
+        const inputId = `input${denomination.charAt(0).toUpperCase()}${denomination.slice(1)}`
+        document.getElementById(inputId).value = counter;
+        denominationsInDrawer[denomination] = counter
+        counter++
+    }
+    console.log("set initial values")
+    console.log("denom", denominationsInDrawer)
 }
+
+setInitialDrawerValues()
 
 function handleDenominationChange(event, denomination) {
     const numericValue = Number(event.target.value) || 0
@@ -78,19 +89,20 @@ function checkCashRegister () {
             } 
         })
 
-            let denom = Object.entries(changeDueInAmountOfDenominations) 
-            var table = document.getElementById("table"); 
-            var tbody = document.createElement("tbody");
+            const denom = Object.entries(changeDueInAmountOfDenominations) 
+            const table = document.getElementById("table"); 
+            const tbody = document.createElement("tbody");
             
             table.appendChild(tbody);
-            denom.forEach(function(items) {
-            var row = document.createElement("tr");
-            items.forEach(function(item) {
-                var cell = document.createElement("td");
-                cell.textContent = item;
-                row.appendChild(cell);
-            });
-            tbody.appendChild(row);
+            denom.forEach(function(denomEntry) {
+                const row = document.createElement("tr")
+                const nameCell = document.createElement("td")
+                nameCell.textContent = camelCaseToHumanReadable(denomEntry[0])
+                row.appendChild(nameCell)
+                const valueCell = document.createElement("td")
+                valueCell.textContent = denomEntry[1];
+                row.appendChild(valueCell)
+                tbody.appendChild(row);
             });
 
         document.getElementById("cash-to-return").innerHTML = ""
@@ -99,13 +111,13 @@ function checkCashRegister () {
 
 
 function handleClick(event) {
+    event.preventDefault()
     document.getElementById("table").innerHTML = ""
     checkCashRegister()
-    event.preventDefault()
 }
 
 function handleReset(event) {
-
+    event.preventDefault()
     let price = document.getElementById("price")
     price.value = price.defaultValue
     let cash = document.getElementById("cash")
@@ -113,7 +125,7 @@ function handleReset(event) {
     cashToReturn.innerHTML = "Please enter the data."
     cashToReturn.style.color = '#333' 
     document.getElementById("table").innerHTML = ""  
-    event.preventDefault()
+    setInitialDrawerValues()
 }
 
 
