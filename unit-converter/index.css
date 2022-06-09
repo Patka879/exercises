@@ -34,7 +34,7 @@ p {
     background-color: aliceblue;
     padding: 1.5%;
     position: absolute;
-        top: 0px;
+        bottom: 0px;
 }
 
 .input-section {
