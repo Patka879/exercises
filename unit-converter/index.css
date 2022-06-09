@@ -7,6 +7,7 @@ body {
     font-family: 'Lato', sans-serif;
     width: 100vw;
     min-height: 100vh;
+    position: relative;
 }
 
 h1 {
@@ -32,10 +33,11 @@ p {
     max-width: 100%;
     background-color: aliceblue;
     padding: 1.5%;
+    position: absolute;
+        top: 0px;
 }
 
 .input-section {
-    position: relative;
     background-image: linear-gradient( 215deg,
         hsl(32deg 90% 52%) 0%,
         hsl(15deg 99% 62%) 39%,
@@ -66,8 +68,6 @@ input {
 }
 
 .conversion-section {
-    position: absolute;
-        bottom: 0;
     padding: 3%;
     height: 62%;
     color:aliceblue; 
