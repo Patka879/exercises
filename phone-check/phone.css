@@ -20,11 +20,12 @@ body {
     text-align: center;
     margin: 0;
     overflow: hidden;
-    position: absolute;
-    top: 0;
+
 }
 
 .container {
+    position: absolute;
+        top: 1%;
     width: 90%;
     margin: 10% 5%;
     background-color: antiquewhite;
