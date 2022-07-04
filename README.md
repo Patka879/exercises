@@ -1,1 +1,1 @@
-This file contains Vanilla JavaScript projects.
+# Java Script Projects
