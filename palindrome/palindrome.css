@@ -11,9 +11,9 @@ body {
 }
 
 #container {
-    display: flex;
+    display: flex;                                                                                                                          
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     background-color: rgb(119, 119, 236);
     align-items: center; 
     justify-content: space-evenly;
@@ -78,12 +78,10 @@ button:active {
 
 @media (min-width: 910px) {
     body {
-        position: static;
+        height: 100vh;
+        padding: 10% 30%;
     }
     #container {
-        position: relative;
-            top: 20%;
-            left: 30%;
         width: 600px;
         height: 400px;
         justify-content: space-around;
