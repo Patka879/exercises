@@ -2,7 +2,7 @@ const catsData = [
     {
         emotionTags: ["moody"],
         isGif: false,
-        image: "angry.webp",
+        image: "angry.jpeg",
         alt: "A cat looking moody",
     },
     {
@@ -14,7 +14,7 @@ const catsData = [
     {
         emotionTags: ["moody"],
         isGif: false,
-        image: "angry3.jpg",
+        image: "angry3.jpeg",
         alt: "A cat looking moody",
     },
     {
@@ -26,49 +26,55 @@ const catsData = [
     {
         emotionTags: ["dominant", "moody"],
         isGif: false,
-        image: "dominant.jpg",
+        image: "dominant.jpeg",
         alt: "A cat looking dominant",
     },
     {
         emotionTags: ["happy", "relaxed"],
         isGif: false,
-        image: "happy.jpg",
+        image: "happy.jpeg",
         alt: "A cat looking happy",
     },
     {
         emotionTags: ["hungry"],
         isGif: false,
-        image: "hungry2.jpg",
+        image: "hungry.jpeg",
+        alt: "A cat looking hungry",
+    },
+    {
+        emotionTags: ["hungry"],
+        isGif: false,
+        image: "hungry1.jpeg",
         alt: "A cat looking hungry",
     },
     {
         emotionTags: ["insomniac"],
         isGif: false,
-        image: "insomnia.png",
+        image: "insomnia.jpeg",
         alt: "A cat looking insomniac",
     },
     {
         emotionTags: ["insomniac"],
-        isGif: true,
-        image: "insomnia2.gif",
+        isGif: false,
+        image: "insomnia1.jpeg",
         alt: "A cat looking insomniac",
     },
     {
         emotionTags: ["relaxed"],
         isGif: false,
-        image: "relaxed.jpg",
+        image: "lazy.jpeg",
         alt: "A cat looking lazy",
     },
     {
         emotionTags: ["scared"],
         isGif: false,
-        image: "nervous.jpg",
+        image: "nervous.jpeg",
         alt: "A cat looking nervous",
     },
     {
         emotionTags: ["sad"],
         isGif: false,
-        image: "sad.webp",
+        image: "sad.jpeg",
         alt: "A cat looking sad",
     },
     {
@@ -80,7 +86,7 @@ const catsData = [
     {
         emotionTags: ["moody"],
         isGif: true,
-        image: "angry.jfif",
+        image: "angry.gif",
         alt: "A cat looking moody",
     },
     {
@@ -92,13 +98,13 @@ const catsData = [
     {
         emotionTags: ["confused"],
         isGif: true,
-        image: "confused.gif",
+        image: "confused2.gif",
         alt: "A cat looking confused",
     },
     {
         emotionTags: ["dominant"],
         isGif: true,
-        image: "dominant2.gif",
+        image: "dominant.gif",
         alt: "A cat looking dominant",
     },
     {
@@ -116,7 +122,7 @@ const catsData = [
     {
         emotionTags: ["hungry"],
         isGif: true,
-        image: "hungry.jfif",
+        image: "hungry.gif",
         alt: "A cat looking hungry",
     },
     {
@@ -134,7 +140,7 @@ const catsData = [
     {
         emotionTags: ["relaxed"],
         isGif: true,
-        image: "relaxed.gif",
+        image: "lazy.gif",
         alt: "A cat looking relaxed",
     },
     {
@@ -146,29 +152,31 @@ const catsData = [
     {
         emotionTags: ["scared", "sad"],
         isGif: true,
-        image: "nervous2.jfif",
+        image: "nervous.gif",
         alt: "A cat looking nervous",
     },
     {
         emotionTags: ["scared"],
         isGif: true,
-        image: "nervous3.gif",
+        image: "nervous2.gif",
         alt: "A cat looking scared",
     },
     {
         emotionTags: ["sad"],
         isGif: true,
-        image: "sad.jfif",
+        image: "sad.gif",
         alt: "A cat looking sad",
     },
 ]
 
 function getEmotionsArray(cats){
     const emotionsArray = []
-    for (let i = 0; i < cats.length; i++){
-        for (let j=0; j < cats[i].emotionTags.length; j++){
-                emotionsArray.push(cats[i].emotionTags[j])
+    for (let cat of cats) {
+        for (let emotion of cat.emotionTags) {
+                emotionsArray.push(emotion)
         }
     }
-console.log(emotionsArray)
+    return emotionsArray
 }
+
+getEmotionsArray(catsData)
