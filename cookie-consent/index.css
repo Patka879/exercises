@@ -120,8 +120,11 @@ main{
     margin-top: 10px;
     padding: 8px 16px;
     display: flex;
-    flex-direction: row-reverse;
     justify-content: center;
+}
+
+.reversed {
+    flex-direction: row-reverse;
 }
 
 .modal-btn{
