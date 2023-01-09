@@ -5,7 +5,7 @@ const getImgBtn = document.getElementById('get-image-btn')
 const gifsOnlyCheckbox = document.getElementById('gifs-only-option')
 
 emotionRadios.addEventListener("change", highlightCheckedOption) 
-getImgBtn.addEventListener('click', getMatchingCatsArray)
+getImgBtn.addEventListener('click', renderCat)
     
 function highlightCheckedOption(e) { 
     const highlightedElements = document.getElementsByClassName('highlight')
@@ -32,6 +32,21 @@ function getMatchingCatsArray() {
         return matchingCatsArray
     }
 }
+
+function getSingleCatObject(){
+    const catsArray = getMatchingCatsArray()
+    if (catsArray.length === 1) {
+        console.log(catsArray[0])
+    } else {
+        console.log(catsArray[Math.floor(Math.random() * catsArray.length)])
+    }
+
+}
+
+function renderCat(){
+    getSingleCatObject()
+}
+   
 
 function getEmotionsArray(cats){
     const emotionsArray = []
