@@ -22,9 +22,14 @@ function getMatchingCatsArray() {
         const isGif = gifsOnlyCheckbox.checked
 
         const matchingCatsArray = catsData.filter(function(meme) {
-            return meme.emotionTags.includes(selectedEmotion)
+            if (isGif) {
+                return meme.emotionTags.includes(selectedEmotion) && meme.isGif
+            } else {
+                return meme.emotionTags.includes(selectedEmotion)
+            }
         })
-        console.log(matchingCatsArray)
+        
+        return matchingCatsArray
     }
 }
 
