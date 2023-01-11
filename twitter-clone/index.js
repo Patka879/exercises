@@ -2,6 +2,7 @@ import { tweetsData } from "./data.js"
 
 const tweetInput = document.getElementById('tweet-input')
 const tweetBtn = document.getElementById('tweet-btn')
+const feed = document.getElementById('feed')
 
 tweetBtn.addEventListener('click', function(){
     console.log(tweetInput.value)
@@ -12,7 +13,7 @@ function getFeedHtml() {
     tweetsData.forEach(function(tweet) {
         feedHtml += `<div class="tweet">
         <div class="tweet-inner">
-            <img src="${tweet.profilePic} class="profile-pic">
+            <img src=${tweet.profilePic} class="profile-pic">
             <div>
                 <p class="handle">${tweet.handle}</p>
                 <p class="tweet-text">${tweet.tweetText}</p>
@@ -32,7 +33,11 @@ function getFeedHtml() {
     </div>`
     })
 
-    console.log(feedHtml)
+    return feedHtml
 }
 
-getFeedHtml()
+function render() {
+    feed.innerHTML = getFeedHtml()
+}
+
+render()
