@@ -12,7 +12,7 @@ document.addEventListener('click', function(e){
     if(e.target.dataset.like){
         handleLikeClick(e.target.dataset.like) 
     } else if (e.target.dataset.retweet) {
-        handleRetweetClick(e.target.dataset.retweet) 
+        handleRetweetClick(e.target.dataset.retweet)
     }
 })
 
@@ -50,6 +50,18 @@ function handleLikeClick(tweetId) {
 function getFeedHtml() {
     let feedHtml = ''
     tweetsData.forEach(function(tweet) {
+
+        let heartClass = ''
+        let arrowsClass = ''
+
+        if (tweet.isLiked) {
+            heartClass = 'liked'
+        }
+
+        if(tweet.isRetweeted) {
+            arrowsClass = 'retweeted'
+        }
+
         feedHtml += `<div class="tweet">
         <div class="tweet-inner">
             <img src=${tweet.profilePic} class="profile-pic">
@@ -62,11 +74,11 @@ function getFeedHtml() {
                     ${tweet.replies.length}
                     </span>
                     <span class="tweet-detail">
-                    <i class="fa-solid fa-heart" data-like="${tweet.uuid}"></i>
+                    <i class="fa-solid fa-heart ${heartClass}" data-like="${tweet.uuid}"></i>
                     ${tweet.likes}
                     </span>
                     <span class="tweet-detail">
-                    <i class="fa-solid fa-retweet" data-retweet="${tweet.uuid}"></i>
+                    <i class="fa-solid fa-retweet ${arrowsClass}" data-retweet="${tweet.uuid}"></i>
                     ${tweet.retweets}
                     </span>
                 </div>   
