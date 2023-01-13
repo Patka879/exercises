@@ -64,8 +64,8 @@ function getFeedHtml() {
 
         let repliesHtml = ''
         if (tweet.replies.length > 0) {
-            for(let reply of tweet.replies) {
-                repliesHtml = `<div class="tweet-reply">
+            tweet.replies.forEach(function(reply){
+                repliesHtml += `<div class="tweet-reply">
                 <div class="tweet-inner">
                     <img src="${reply.profilePic}" class="profile-pic">
                         <div>
@@ -74,7 +74,7 @@ function getFeedHtml() {
                         </div>
                     </div>
                 </div>`
-            }
+            })
         }
 
         feedHtml += `<div class="tweet">
