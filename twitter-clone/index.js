@@ -14,13 +14,13 @@ document.addEventListener('click', function(e){
     } else if (e.target.dataset.retweet) {
         handleRetweetClick(e.target.dataset.retweet)
     } else if (e.target.dataset.reply) {
-        handleReplyClick (e.target.dataset.reply)
+        handleReplyClick(e.target.dataset.reply)
     }
 })
 
-function handleReplyClick() {
-
-}
+function handleReplyClick(replyId) {
+    document.getElementById(`replies-${replyId}`).classList.toggle('hidden')
+    }
 
 function handleRetweetClick(tweetId) {
     const targetTweetObj = tweetsData.filter(function(tweet){
@@ -105,7 +105,7 @@ function getFeedHtml() {
                 </div>   
             </div>            
         </div>
-        <div id="${tweet.uuid}">
+        <div class="hidden" id="replies-${tweet.uuid}">
             ${repliesHtml}
     </div> 
     </div>`
