@@ -13,8 +13,14 @@ document.addEventListener('click', function(e){
         handleLikeClick(e.target.dataset.like) 
     } else if (e.target.dataset.retweet) {
         handleRetweetClick(e.target.dataset.retweet)
+    } else if (e.target.dataset.reply) {
+        handleReplyClick (e.target.dataset.reply)
     }
 })
+
+function handleReplyClick() {
+
+}
 
 function handleRetweetClick(tweetId) {
     const targetTweetObj = tweetsData.filter(function(tweet){
@@ -99,7 +105,7 @@ function getFeedHtml() {
                 </div>   
             </div>            
         </div>
-        <div id="#{tweet.uuid}">
+        <div id="${tweet.uuid}">
             ${repliesHtml}
     </div> 
     </div>`
