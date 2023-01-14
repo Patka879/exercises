@@ -28,6 +28,7 @@ function handleTweetBtnClick(){
         isRetweeted: false,
         uuid: uuidv4(),
     })
+    render()
 }
 
 function handleReplyClick(replyId) {
