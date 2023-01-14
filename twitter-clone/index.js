@@ -1,7 +1,6 @@
 import { tweetsData } from "./data.js"
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid'
 
-const tweetInput = document.getElementById('tweet-input')
 const feed = document.getElementById('feed')
 
 document.addEventListener('click', function(e){
@@ -17,6 +16,8 @@ document.addEventListener('click', function(e){
 })
 
 function handleTweetBtnClick(){
+    
+    const tweetInput = document.getElementById('tweet-input')
 
     if (!tweetInput.value) {
         tweetInput.value = "Insert Text!"
