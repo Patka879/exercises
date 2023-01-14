@@ -1,12 +1,7 @@
 import { tweetsData } from "./data.js"
 
 const tweetInput = document.getElementById('tweet-input')
-const tweetBtn = document.getElementById('tweet-btn')
 const feed = document.getElementById('feed')
-
-tweetBtn.addEventListener('click', function(){
-    console.log(tweetInput.value)
-})
 
 document.addEventListener('click', function(e){
     if(e.target.dataset.like){
