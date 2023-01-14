@@ -17,9 +17,9 @@ document.addEventListener('click', function(e){
 })
 
 function handleTweetBtnClick(){
-    tweetsData.push({
-        handle: `@TrollBot66756542 💎`,
-        profilePic: `images/troll.jpg`,
+    tweetsData.unshift({
+        handle: `@Patka`,
+        profilePic: `images/scrimbalogo.png`,
         likes: 0,
         retweets: 0,
         tweetText: tweetInput.value,
