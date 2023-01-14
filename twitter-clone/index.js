@@ -17,7 +17,17 @@ document.addEventListener('click', function(e){
 })
 
 function handleTweetBtnClick(){
-    console.log(tweetInput.value)
+    tweetsData.push({
+        handle: `@TrollBot66756542 💎`,
+        profilePic: `images/troll.jpg`,
+        likes: 0,
+        retweets: 0,
+        tweetText: tweetInput.value,
+        replies: [],
+        isLiked: false,
+        isRetweeted: false,
+        uuid: uuidv4(),
+    })
 }
 
 function handleReplyClick(replyId) {
