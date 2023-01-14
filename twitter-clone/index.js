@@ -17,17 +17,23 @@ document.addEventListener('click', function(e){
 })
 
 function handleTweetBtnClick(){
-    tweetsData.unshift({
-        handle: `@Patka`,
-        profilePic: `images/scrimbalogo.png`,
-        likes: 0,
-        retweets: 0,
-        tweetText: tweetInput.value,
-        replies: [],
-        isLiked: false,
-        isRetweeted: false,
-        uuid: uuidv4(),
-    })
+
+    if (!tweetInput.value) {
+        tweetInput.value = "Insert Text!"
+    } else {
+        tweetsData.unshift({
+            handle: `@Patka`,
+            profilePic: `images/scrimbalogo.png`,
+            likes: 0,
+            retweets: 0,
+            tweetText: tweetInput.value,
+            replies: [],
+            isLiked: false,
+            isRetweeted: false,
+            uuid: uuidv4(),
+        })
+        tweetInput.value = ''
+    }
     render()
 }
 
