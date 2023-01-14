@@ -15,8 +15,14 @@ document.addEventListener('click', function(e){
         handleRetweetClick(e.target.dataset.retweet)
     } else if (e.target.dataset.reply) {
         handleReplyClick(e.target.dataset.reply)
+    } else if (e.target.id === 'tweet-btn') {
+        handleTweetBtnClick()
     }
 })
+
+function handleTweetBtnClick(){
+    console.log(tweetInput.value)
+}
 
 function handleReplyClick(replyId) {
     document.getElementById(`replies-${replyId}`).classList.toggle('hidden')
