@@ -238,28 +238,28 @@ h3 {
         margin: 0 4%;
     }
     .left-input {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
     .right-input {
-        font-size: 0.7rem;
+        font-size: 0.4rem;
     }
     .left-label {
         float: left;
         margin-bottom: 10%;
         font-weight: 600;
-        font-size: 1.4rem;
+        font-size: 1rem;
         padding-top: 25%;
         margin-bottom: 3%;
     }
     .right-label {
-        font-size: 0.8rem;
-        margin-bottom: 3%;
-        margin-top: 1%;
+        font-size: 0.5rem;
+        margin-bottom: -8px;
+        margin-top: 0;
     }
     .change-btn {
-        height: 30px;
+        height: 20px;
         width: 80%; 
-        margin: 0 4%;
+        font-size: 0.5rem;
     }
     .output {
         width: 40%;
@@ -275,8 +275,65 @@ h3 {
         font-size: 2rem;
     }
     h3 {
-        font-size: 1rem;
+        font-size: 0.5rem;
         margin-top: 15px;
+    }
+    table {
+        font-size: 1rem;
+    }
+}
+@media (min-width: 1200px) {
+    .left-label {
+        font-size: 1rem;
+    }
+    .right-label {
+        font-size: 0.5rem;
+        margin-bottom: 0.5%;
+        margin-top: 0.7%;
+    }
+    .right-input {
+        font-size: 0.5rem;
+    }
+    h3 {
+        font-size: 0.8rem;
+    }
+    .change-btn {
+        height: 20px;
+        font-size: 0.7rem;
+    }
+}
+@media (min-width: 1400px) {
+    .right-label {
+        font-size: 0.6rem;
+        margin-bottom: 1%;
+        margin-top: 1%;
+    }
+    .right-input {
+        font-size: 0.7rem;
+    }
+    .change-btn {
+        height: 30px;
+        font-size: 1rem;
+    }
+}
+@media (min-width: 1550px) {
+    .right-label {
+        font-size: 0.6rem;
+        margin-bottom: 3%;
+    }
+    h3 {
+        font-size: 1rem
+    }
+    table {
+        font-size: 1.3rem;
+    }
+}
+@media (min-width: 1800px) {
+    .right-label {
+        font-size: 1rem;
+    }
+    .right-input {
+        font-size: 0.9rem;
     }
 }
 
